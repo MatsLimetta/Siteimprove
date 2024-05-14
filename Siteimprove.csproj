@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>Limetta.Umbraco.Siteimprove</Product>
+    <PackageId>Limetta.Umbraco.Siteimprove</PackageId>
+    <Title>Siteimprove</Title>
+    <Description>The Siteimprove Umbraco CMS plugin, orginally by Paul Seal, adapted to work on Umbraco 13 and .NET 8 and above.</Description>
+    <PackageTags>umbraco plugin package siteimprove</PackageTags>
+	<Authors>Siteimprove, Mats Stam</Authors>
+	<Copyright>2024 © Siteimprove, Mats Stam</Copyright>
+	<PackageProjectUrl>https://github.com/MatsLimetta/Siteimprove</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/MatsLimetta/Siteimprove</RepositoryUrl>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<AssemblyVersion>13.0.0</AssemblyVersion>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="13.3.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\Siteimprove\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="App_Plugins\Siteimprove\dashboard.js" />
+    <Content Remove="App_Plugins\Siteimprove\siteimprove.controller.js" />
+    <Content Remove="App_Plugins\Siteimprove\siteimprove.helper.js" />
+    <Content Remove="App_Plugins\Siteimprove\siteimprove.main.js" />
+    <Content Remove="App_Plugins\Siteimprove\views\dashboard.html" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <!--<Exec Command="xcopy &quot;$(ProjectDir)App_Plugins\*.*&quot; &quot;$(ProjectDir)..\..\Jamstalldhetsmyndigheten.Web\App_Plugins&quot; /Y /I /E" />-->
+  </Target>
+</Project>
