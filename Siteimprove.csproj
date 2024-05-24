@@ -4,7 +4,7 @@
     <ContentTargetFolders>.</ContentTargetFolders>
     <Product>Limetta.Umbraco.Siteimprove</Product>
     <PackageId>Limetta.Umbraco.Siteimprove</PackageId>
-    <Title>Siteimprove</Title>
+    <Title>Siteimprove Umbraco Plugin</Title>
     <Description>The Siteimprove Umbraco CMS plugin, orginally by Paul Seal, adapted to work on Umbraco 13 and .NET 8 and above.</Description>
     <PackageTags>umbraco plugin package siteimprove</PackageTags>
 	<Authors>Siteimprove, Mats Stam</Authors>
@@ -16,6 +16,8 @@
 	<AssemblyVersion>13.0.0</AssemblyVersion>
 	<ImplicitUsings>enable</ImplicitUsings>
 	<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +36,13 @@
     <Content Remove="App_Plugins\Siteimprove\siteimprove.helper.js" />
     <Content Remove="App_Plugins\Siteimprove\siteimprove.main.js" />
     <Content Remove="App_Plugins\Siteimprove\views\dashboard.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -11,6 +11,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Extensions;
+using Newtonsoft.Json;
 
 namespace Siteimprove.Controllers
 {
@@ -41,7 +42,7 @@ namespace Siteimprove.Controllers
                 newUrlPart = urlMap?.NewUrlPart ?? string.Empty
             };
 
-            return Ok(model);
+            return Content(JsonConvert.SerializeObject(model), "application/json");
         }
 
         [HttpPost]
@@ -72,7 +73,7 @@ namespace Siteimprove.Controllers
                     success = true,
                     message = "Saved"
                 };
-                return Ok(model);
+                return Content(JsonConvert.SerializeObject(model), "application/json");
             }
             catch (Exception ex)
             {
@@ -81,7 +82,7 @@ namespace Siteimprove.Controllers
                     success = false,
                     message = ex.Message
                 };
-                return Ok(model);
+                return Content(JsonConvert.SerializeObject(model), "application/json");
             }
         }
 
@@ -110,19 +111,19 @@ namespace Siteimprove.Controllers
         [HttpGet]
         public async Task<ActionResult> GetToken()
         {
-            return Ok(await _siteImproveSettingsService.GetToken());
+            return Content(await _siteImproveSettingsService.GetToken());
         }
 
         [HttpGet]
         public async Task<ActionResult> RequestNewToken()
         {
-            return Ok(await _siteImproveSettingsService.GetNewToken());
+            return Content(await _siteImproveSettingsService.GetNewToken());
         }
 
         [HttpGet]
         public ActionResult GetCrawlingIds()
         {
-            return Ok(GetCrawlIds());
+            return Content(GetCrawlIds());
         }
 
         [HttpGet]
@@ -145,7 +146,7 @@ namespace Siteimprove.Controllers
                     url
                 };
 
-                return Ok(model);
+                return Content(JsonConvert.SerializeObject(model), "application/json");
             }
         }
 
