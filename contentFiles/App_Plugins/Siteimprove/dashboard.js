@@ -53,7 +53,7 @@
                     $scope.output = "Saved!";
                     
                     if (window.siteimprove) {
-                        window.siteimprove.recrawlIds = ($scope.crawlingIds + ' || '').split(',');
+                        window.siteimprove.recrawlIds = ($scope.crawlingIds + '' || '').split(',');
                     }
 
                     setTimeout(function () {
