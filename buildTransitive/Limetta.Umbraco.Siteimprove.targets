@@ -1,6 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SiteimproveContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Siteimprove\**\*.*</SiteimproveContentFilesPath>
+    <SiteimproveContentFilesPath>$(MSBuildThisFileDirectory)..\contentFiles\App_Plugins\Siteimprove\**\*.*</SiteimproveContentFilesPath>
   </PropertyGroup>
 
   <Target Name="CopySiteimproveAssets" BeforeTargets="Build">
@@ -8,7 +8,7 @@
       <SiteimproveContentFiles Include="$(SiteimproveContentFilesPath)" />
     </ItemGroup>
     <Message Text="Copying Siteimprove files: $(SiteimproveContentFilesPath) - #@(SiteimproveContentFiles->Count()) files" Importance="high" />
-    <Copy SourceFiles="@(SiteimproveContentFiles)" DestinationFiles="@(SiteimproveContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Siteimprove\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(SiteimproveContentFiles)" DestinationFiles="@(SiteimproveContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Siteimprove\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
   </Target>
 
   <Target Name="ClearSiteimproveAssets" BeforeTargets="Clean">

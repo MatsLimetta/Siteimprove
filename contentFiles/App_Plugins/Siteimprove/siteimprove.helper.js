@@ -1,5 +1,5 @@
 ﻿var siteimprove = {
-    log: true,
+    log: false,
     recrawlIds: [],
     token: '',
     currentPageId: 0,
@@ -32,6 +32,10 @@ siteimprove.helper = {
 
                     // Build full URL
                     _si.push([method, url, response]);
+                })
+                .fail(function (error) {
+                    if (siteimprove.log)
+                        console.log("pushSi error:", error);
                 });
         } else {
             if (siteimprove.log)
@@ -54,7 +58,12 @@ siteimprove.helper = {
      * @return {Promise}
      */
     getPageUrl: function (pageId) {
-        return $.get(siteimprove.helper.backofficeApiUrl + '/getPageUrl?pageid=' + pageId);
+        return $.get(siteimprove.helper.backofficeApiUrl + '/getPageUrl?pageid=' + pageId)
+            .then()
+            .fail(function (error) {
+                if (siteimprove.log)
+                    console.log("getPageUrl error:", error);
+            });
     },
 
     /**
@@ -82,6 +91,8 @@ siteimprove.helper = {
 
             })
             .fail(function (error) {
+                if (siteimprove.log)
+                    console.log("handleFetchPushUrl error:", error);
                 siteimprove.helper.closeSi();
             });
     },
@@ -99,7 +110,11 @@ siteimprove.helper = {
             if (siteimprove.recrawlIds.length < 1) {
                 $.get(siteimprove.helper.backofficeApiUrl + '/GetCrawlingIds')
                     .then(function (response) {
-                        siteimprove.recrawlIds = (response || '').split(',');
+                        siteimprove.recrawlIds = (response + '' || '').split(',');
+                    })
+                    .fail(function (error) {
+                        if (siteimprove.log)
+                            console.log("pushSi error:", error);
                     });
             }
 

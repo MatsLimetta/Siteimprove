@@ -21,11 +21,10 @@ function InitializeSiteimprove($scope)
 {
 	
         var siHelper = window.siteimprove.helper;
-//            $scope = angular.element('body').scope(); // Get $rootSope
 
         $.get(siHelper.backofficeApiUrl + '/GetCrawlingIds')
             .then(function (response) {
-                window.siteimprove.recrawlIds = (response || '').split(',');
+                window.siteimprove.recrawlIds = (response + '' || '').split(',');
             });
 
         $.get(siHelper.backofficeApiUrl + '/getToken')

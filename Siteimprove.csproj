@@ -17,7 +17,8 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>1.0.1</Version>
+	<Version>1.0.3</Version>
+	<FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,19 +27,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="App_Plugins\Siteimprove\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <Content Include="contentFiles\App_Plugins\Siteimprove\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="App_Plugins\Siteimprove\dashboard.js" />
-    <Content Remove="App_Plugins\Siteimprove\siteimprove.controller.js" />
-    <Content Remove="App_Plugins\Siteimprove\siteimprove.helper.js" />
-    <Content Remove="App_Plugins\Siteimprove\siteimprove.main.js" />
-    <Content Remove="App_Plugins\Siteimprove\views\dashboard.html" />
+    <Compile Remove="App_Plugins\**" />
+    <EmbeddedResource Remove="App_Plugins\**" />
+    <None Remove="App_Plugins\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="contentFiles\App_Plugins\Siteimprove\dashboard.js" />
+    <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.controller.js" />
+    <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.helper.js" />
+    <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.main.js" />
+    <None Remove="contentFiles\App_Plugins\Siteimprove\views\dashboard.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="contentFiles\App_Plugins\Siteimprove\views\dashboard.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="contentFiles\App_Plugins\Siteimprove\dashboard.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="contentFiles\App_Plugins\Siteimprove\siteimprove.controller.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="contentFiles\App_Plugins\Siteimprove\siteimprove.helper.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="contentFiles\App_Plugins\Siteimprove\siteimprove.main.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
