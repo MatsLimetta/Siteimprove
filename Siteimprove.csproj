@@ -17,8 +17,8 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>2.0.0</Version>
-	<FileVersion>2.0.0.0</FileVersion>
+	<Version>2.0.1</Version>
+	<FileVersion>2.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <None Remove="contentFiles\App_Plugins\Siteimprove\dashboard.js" />
+    <None Remove="contentFiles\App_Plugins\Siteimprove\load.js" />
     <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.controller.js" />
     <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.helper.js" />
     <None Remove="contentFiles\App_Plugins\Siteimprove\siteimprove.main.js" />

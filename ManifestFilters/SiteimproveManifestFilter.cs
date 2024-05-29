@@ -20,6 +20,7 @@ namespace Siteimprove.ManifestFilters
                 AllowPackageTelemetry = true,
                 Scripts = new[]
                 {
+                    "/App_Plugins/Siteimprove/load.js",
                     "/App_Plugins/Siteimprove/dashboard.js",
                     "/App_Plugins/Siteimprove/siteimprove.helper.js",
                     "/App_Plugins/Siteimprove/siteimprove.main.js",

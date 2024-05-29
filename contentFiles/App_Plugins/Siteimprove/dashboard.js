@@ -1,11 +1,7 @@
 ﻿angular.module("umbraco").controller("SiteImprove.DashboardController", [
     '$scope', '$http', 'assetsService',
     function ($scope, $http, assetsService) {
-
-        assetsService.load(["https://cdn.siteimprove.net/cms/overlay.js?v=2"], $scope).then(function () {
-            console.log('Overlay loaded');
-        });
-
+        
         $scope.token = "";
         $scope.crawlingIds = "";
         $scope.pathMap = { currentUrlPart: '', newUrlPart: ''};
@@ -31,20 +27,6 @@
                         setTimeout(siteimprove.reloadPage, 1000);
                     }
                 });
-
-
-            /*$http.post('/umbraco/backoffice/api/SiteImproveApi/setCrawlingIds?ids=' + $scope.crawlingIds)
-                .then(function () {
-                    $scope.output = "Saved!";
-
-                    if (window.siteimprove) {
-                        window.siteimprove.recrawlIds = ($scope.crawlingIds || '').split(',');
-                    }
-
-                    setTimeout(function () {
-                        $scope.output = "";
-                    }, 2000);
-                });*/
         };
 
         $scope.saveIds = function () {
