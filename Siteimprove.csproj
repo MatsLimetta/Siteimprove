@@ -6,7 +6,7 @@
     <PackageId>Limetta.Umbraco.Siteimprove</PackageId>
     <Title>Siteimprove Umbraco Plugin</Title>
     <Description>The Siteimprove Umbraco CMS plugin, orginally by Paul Seal, adapted to work on Umbraco 13 and .NET 8 and above.</Description>
-    <PackageTags>umbraco plugin package siteimprove</PackageTags>
+    <PackageTags>umbraco plugin package siteimprove umbraco-marketplace umbraco-v13</PackageTags>
 	<Authors>Siteimprove, Mats Stam</Authors>
 	<Copyright>2024 © Siteimprove, Mats Stam</Copyright>
 	<PackageProjectUrl>https://github.com/MatsLimetta/Siteimprove</PackageProjectUrl>
@@ -17,8 +17,8 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>2.0.1</Version>
-	<FileVersion>2.0.1.0</FileVersion>
+	<Version>2.0.2</Version>
+	<FileVersion>2.0.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -71,4 +71,6 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <!--<Exec Command="xcopy &quot;$(ProjectDir)App_Plugins\*.*&quot; &quot;$(ProjectDir)..\..\Jamstalldhetsmyndigheten.Web\App_Plugins&quot; /Y /I /E" />-->
   </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties umbraco-marketplace_1json__JsonSchema="https://marketplace.umbraco.com/umbraco-marketplace-schema.json" /></VisualStudio></ProjectExtensions>
 </Project>

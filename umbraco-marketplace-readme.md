@@ -1,4 +1,4 @@
-# Siteimprove Integration for Umbraco 13
+# Siteimprove Integration for Umbraco
 
 ## Description
 
@@ -47,8 +47,3 @@ If you encounter any issues or have questions, please create an issue on the Git
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-
-
-<sub>*I made this public before it was ready. So sorry about that everyone that downloaded it. 1.X version should be deprecate by now.
-Version 2 is working correctly (2.0.1 updated so that the plugin loads directly as you enter the backoffice).*</sub>

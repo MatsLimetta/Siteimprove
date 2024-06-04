@@ -1,0 +1,27 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Mats Stam",
+    "Description": "Mats is a longtime Umbraco-developer and is Umbraco Master certified. He currently works at the Gold Partner Limetta AB, which is based in Stockholm, Sweden.",
+    "ImageUrl": "https://github.com/limettamats.png"
+  },
+  "Category": "Editor Tools",
+  "Description": "This package provides an integration between Siteimprove and Umbraco CMS. The package allows the use of Siteimprove's tools directly within the Umbraco backoffice, giving editors the ability to improve their website's quality and SEO performance directly from Umbraco.",
+  "DocumentationUrl": "https://github.com/MatsLimetta/Siteimprove/",
+  "IssueTrackerUrl": "https://github.com/MatsLimetta/Siteimprove/issues",
+  "LicenseTypes": [ "Free" ],
+  "Screenshots": [],
+  "Tags": [
+    "siteimprove",
+    "overlay",
+    "seo",
+    "backoffice"
+  ],
+  "Title": "Limetta Siteimprove Plugin",
+  "VersionSpecificPackageIds": [
+    {
+      "UmbracoMajorVersion": 13,
+      "PackageId": "Limetta.Umbraco.Siteimprove"
+    }
+  ]
+}
